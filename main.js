@@ -6,7 +6,7 @@ const topDinos = document.querySelectorAll('.top-dinos');
 for (const dino of topDinos) {
     dino.addEventListener('click', function (event) {
         const dinoClicked = event.target;
-            dinoClicked.style.textDecoration = "line-through";  
+        dinoClicked.style.textDecoration = "line-through";  
     })
 }
 
@@ -33,3 +33,32 @@ for (const image of dinoImages) {
         imageClicked.style.width = 0;
     })
 }
+
+// create an array to target all elements?
+
+const button = document.querySelector('button');
+
+const allDestroy = document.querySelectorAll('.to-destroy');
+
+/*function destroyAll() {
+    for (const element of allDestroy) {
+        if (element.classList.contains('top-dinos')) {
+            element.style.textDecoration = "line-through";
+        } else if (element.classList.contains('middle-dinos'){
+            element.style.opacity = 0;
+        } else if (element.classList.contains('row-images'){
+            element.style.width = 0;
+        }
+    }
+}*/
+
+function destroyAll() {
+    for (const element of allDestroy) {
+        if element.hasClass('top-dinos') {
+            element.style.textDecoration = "line-through";
+        }
+    }
+}
+
+
+button.addEventListener('click', destroyAll);
