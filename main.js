@@ -23,7 +23,7 @@ for (const dino of middleDinos) {
 
 
 // create an array to target dino images
-const dinoImages = document.querySelectorAll('#row');
+const dinoImages = document.querySelectorAll('.row-images');
 
 // loop through and hide dino images clicked
 
@@ -35,10 +35,11 @@ for (const image of dinoImages) {
 }
 
 // create an array to target all elements?
+// click event will effect each loop differently
 
 const button = document.querySelector('button');
 
-function destroyAll() {
+/*function destroyAll() {
     for (const dino of topDinos) {
         dino.style.textDecoration = "line-through";  
     }
@@ -50,6 +51,32 @@ function destroyAll() {
     for (const image of dinoImages) {  
         image.style.width = 0;
     }
+}*/
+
+function destroyOne() {
+    for (const dino of topDinos) {
+        dino.style.textDecoration = "line-through";  
+    }
+}
+function destroyTwo(){
+    for (const dino of middleDinos) {
+        dino.style.opacity = 0;  
+    }
+}
+    
+function destroyThree(){
+    for (const image of dinoImages) {  
+        image.style.width = 0;
+    }
 }
 
-button.addEventListener('click', destroyAll);
+/*function destroyAll() {
+    destroyOne;
+    destroyTwo;
+    destroyThree;
+}*/
+
+button.addEventListener('click', destroyOne)
+button.addEventListener('click', destroyTwo)
+// the bottom event listener DOES NOT WORK
+button.addEventListener('click', destroyThree)
