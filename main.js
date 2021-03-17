@@ -38,27 +38,18 @@ for (const image of dinoImages) {
 
 const button = document.querySelector('button');
 
-const allDestroy = document.querySelectorAll('.to-destroy');
-
-/*function destroyAll() {
-    for (const element of allDestroy) {
-        if (element.classList.contains('top-dinos')) {
-            element.style.textDecoration = "line-through";
-        } else if (element.classList.contains('middle-dinos'){
-            element.style.opacity = 0;
-        } else if (element.classList.contains('row-images'){
-            element.style.width = 0;
-        }
-    }
-}*/
-
 function destroyAll() {
-    for (const element of allDestroy) {
-        if element.hasClass('top-dinos') {
-            element.style.textDecoration = "line-through";
-        }
+    for (const dino of topDinos) {
+        dino.style.textDecoration = "line-through";  
+    }
+
+    for (const dino of middleDinos) {
+        dino.style.opacity = 0;  
+    }
+
+    for (const image of dinoImages) {  
+        image.style.width = 0;
     }
 }
-
 
 button.addEventListener('click', destroyAll);
