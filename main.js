@@ -23,7 +23,7 @@ for (const dino of middleDinos) {
 
 
 // create an array to target dino images
-const dinoImages = document.querySelectorAll('#row');
+const dinoImages = document.querySelectorAll('img');
 
 // loop through and hide dino images clicked
 
@@ -40,6 +40,7 @@ for (const image of dinoImages) {
 // click event will effect each loop differently
 
 const button = document.querySelector('button');
+
 
 
 function destroyOne() {
@@ -59,13 +60,19 @@ function destroyThree(){
     }
 }
 
-function destroyAll() {
+button.addEventListener('click', function (){
     destroyOne();
     destroyTwo();
     destroyThree();
-}
+})
 
-button.addEventListener('click', destroyAll)
+/*function destroyAll() {
+    destroyOne();
+    destroyTwo();
+    destroyThree();
+}*/
+
+
 
 /*function destroyAll() {
     for (const dino of topDinos) {
