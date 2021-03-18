@@ -41,19 +41,33 @@ for (const image of dinoImages) {
 
 const button = document.querySelector('button');
 
+function destroyAll() {
+    for (const dino of topDinos) {
+        dino.style.textDecoration = "line-through";  
+    }
+    for (const dino of middleDinos) {
+        dino.style.opacity = 0;  
+    }
+    for (const image of dinoImages) {  
+        image.style.width = 0;
+    }
+}
+
+button.addEventListener('click', destroyAll)
 
 
-function destroyOne() {
+/*function destroyOne() {
     for (const dino of topDinos) {
         dino.style.textDecoration = "line-through";  
     }
 }
+
 function destroyTwo(){
     for (const dino of middleDinos) {
         dino.style.opacity = 0;  
     }
 }
-    
+
 function destroyThree(){
     for (const image of dinoImages) {  
         image.style.width = 0;
@@ -64,29 +78,10 @@ button.addEventListener('click', function (){
     destroyOne();
     destroyTwo();
     destroyThree();
-})
+})*/
 
 /*function destroyAll() {
     destroyOne();
     destroyTwo();
     destroyThree();
 }*/
-
-
-
-/*function destroyAll() {
-    for (const dino of topDinos) {
-        dino.style.textDecoration = "line-through";  
-    }
-    for (const dino of middleDinos) {
-        dino.style.opacity = 0;  
-    }
-    for (const image of dinoImages) {  
-        image.style.width = 0;
-    }
-}*/
-
-/*button.addEventListener('click', destroyOne)
-button.addEventListener('click', destroyTwo)
-//the bottom event listener DOES NOT WORK
-button.addEventListener('click', destroyThree())*/
